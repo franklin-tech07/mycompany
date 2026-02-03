@@ -19,7 +19,6 @@ const Home = () => {
         <div className="card1">
           <div className="Logo">
             <img src={Logo} alt="" />
-            <h1>ElFrak Tech</h1>
           </div>
           <div className="info">
             <div className="H-heading">
