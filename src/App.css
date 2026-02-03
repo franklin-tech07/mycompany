@@ -1,42 +1,1023 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --background1: #30435a;
+  --background2: #ffffff;
+  --accent: #a8d6e1;
+  --font: #aebdbe;
+  --heading: #30435a;
+  --accent2: #f59e0b;
+
+  --font-heading: "Poppins", sans-serif;
+  --font-family: "Inter", sans-serif;
+}
+
+#home {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--background2);
+  display: flex;
+}
+
+.card1 {
+  background-color: var(--background2);
+  height: 100vh;
+  width: 60%;
+}
+
+.card2 {
+  background-color: var(--background1);
+  height: 100vh;
+  width: 40%;
+}
+
+.Logo {
+  display: flex;
+  padding-left: 60px;
+}
+
+.Logo img {
+  height: 270px;
+}
+
+.Logo h1 {
+  height: 270px;
+  display: flex;
+  align-items: center;
+  font-size: 50px;
+  font-family: var(--font-heading);
+  color: var(--heading);
+}
+
+.info {
+  width: 100%;
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 190px;
+  gap: 30px;
+  padding-bottom: 90px;
+}
+
+.H-heading {
+  width: 440px;
+  padding-left: 10px;
+  font-size: 22px;
+  font-family: var(--font-heading);
+  color: var(--heading);
+  box-shadow: 0 12px 10px -10px rgba(0, 0, 0, 0.2);
+}
+
+.info p {
+  font-size: 15px;
+  font-family: var(--font-family);
+  color: var(--heading);
+  padding-right: 30px;
+}
+
+.info button {
+  background-color: var(--background1);
+  height: 40px;
+  width: 200px;
+  border-radius: 15px;
+  border: none;
+  color: var(--accent);
+  transition: 0.3s ease;
+}
+
+.info button:hover {
+  height: 50px;
+  background-color: var(--accent2);
+}
+
+.card2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 100px;
+  box-shadow: 0 12px 10px -10px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  font-size: 20px;
+  font-family: var(--font-family);
+}
+
+.card2 nav a {
+  text-decoration: none;
+  color: var(--font);
+  position: relative;
+}
+
+.card2 nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--accent2);
+  transition: all 0.3s ease;
+}
+
+.card2 nav a:hover::after {
+  width: 100px;
+}
+
+.card2 nav a:hover {
+  color: var(--accent);
+  font-size: 25px;
+}
+
+.whatsapp-icon {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  font-size: 50px;
+  color: #25d366;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  /* Bounce animation */
+  animation: bounce 2s infinite;
+
+  /* Smooth hover transition */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.2); /* Grow slightly */
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6); /* Glow shadow */
+  background: #25d366; /* Change background to WhatsApp green */
+  color: white; /* Icon color white */
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-8px);
+  }
+}
+
+.whatsapp-icon:hover {
+  animation-play-state: paused;
+}
+
+.scroll-arrow {
+  position: fixed; /* stays visible */
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  color: #999;
+  animation: arrowBounce 1.5s infinite;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes arrowBounce {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -12px);
+  }
+}
+
+.scroll-arrow {
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.scroll-arrow:hover {
+  color: var(--accent); /* or your brand color */
+}
+
+.scroll-arrow svg:nth-child(2) {
+  margin-top: -8px;
+  opacity: 0.5;
+}
+
+#about {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 0px 200px;
+  text-align: center;
+  box-shadow: 0 12px 10px -10px rgba(0, 0, 0, 0.2);
+}
+
+#about div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+#about h1 {
+  font-size: 30px;
+  color: var(--heading);
+}
+
+#about h4 {
+  font-size: 25px;
+  color: var(--heading);
+}
+
+#about p {
+  font-size: 20px;
+  color: var(--heading);
+  padding: 0px 200px;
+  text-align: left;
+}
+
+#about p li {
+  margin: 10px 0px;
+}
+
+#services {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 10px -10px rgba(0, 0, 0, 0.2);
+}
+
+.service-heading {
+  font-size: 40px;
+  color: var(--heading);
+  font-family: var(--font-heading);
+}
+
+.services-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Slider viewport */
+.services-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden; /* IMPORTANT */
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  max-width: 1080px; /* controls how much side cards show */
+  padding: 0 220px; /* 👈 THIS creates the quarter peek */
+}
+
+/* Cards */
+.service-card {
+  scroll-snap-align: center;
+  min-width: 600px;
+  height: 350px;
+  background-color: var(--background1);
+  color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 50px;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.service-card {
+  transform: scale(0.9);
+  transition: 0.4s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.service-card:hover {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.service-card h1 {
+  font-family: var(--font-heading);
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.service-card h4 {
+  font-family: var(--font-family);
+  margin-bottom: 20px;
+  color: var(--font);
+  font-weight: 300;
+  font-size: 22px;
+}
+.service-card p {
+  font-family: var(--font-family);
+  margin-bottom: 20px;
+  color: var(--font);
+  font-size: 18px;
+}
+
+.service-h {
+  font-family: var(--font-heading);
+  color: var(--heading);
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.arrow {
+  height: 50px;
+  width: 50px;
+  font-size: 30px;
+  border: none;
+  background-color: transparent;
+  color: var(--accent);
+}
+
+#whatwedo {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div1 {
+  height: 100vh;
+  width: 40%;
+  background-color: var(--background1);
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 0px 100px;
+}
+
+.div1 h1 {
+  color: var(--accent);
+}
+
+.div1 p {
+  color: var(--font);
+  font-size: 25px;
+}
+
+.div2 {
+  height: 100vh;
+  width: 60%;
+  background-color: var(--background2);
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 0px 100px;
+}
+
+.div2 h1 {
+  font-size: 25px;
+  color: var(--heading);
+}
+
+.div2 p {
+  color: var(--heading);
+  font-size: 20px;
+}
+
+.div2 h6 {
+  color: var(--heading);
+  font-size: 20px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+#howitworks {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+#howitworks div {
+  background-color: var(--background1);
+  height: 100%;
+  width: 100%;
+  text-align: left;
+  padding: 100px;
+}
+
+#howitworks div h1 {
+  color: var(--accent);
+  margin-bottom: 30px;
+}
+
+#howitworks div p {
+  color: var(--font);
+  font-size: 20px;
+}
+
+#calltoaction {
+  height: 55vh;
+  width: 100%;
+  background-color: var(--background2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#calltoaction div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+}
+
+#calltoaction div h1 {
+  font-size: 40px;
+  color: var(--heading);
+}
+
+#calltoaction div p {
+  font-size: 30px;
+  color: var(--heading);
+}
+
+#calltoaction div button {
+  background-color: var(--background1);
+  height: 40px;
+  width: 200px;
+  border-radius: 15px;
+  border: none;
+  color: var(--accent);
+  transition: 0.3s ease;
+}
+
+#calltoaction div button:hover {
+  height: 50px;
+  background-color: var(--accent2);
+}
+
+.CTAcontact {
+  padding-bottom: 30px;
+}
+
+.ACTAcontact {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  font-size: 40px;
+}
+
+.icons1 {
+  color: #25d366;
+}
+
+.icons2 {
+  color: #f503a9;
+}
+
+.icons3 {
+  color: #0b0b0b;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--heading);
+}
+
+footer {
+  height: 15vh;
+  background-color: var(--background1);
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  color: var(--accent);
+}
+
+#portfolio {
+  background-color: var(--background1);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  padding-top: 50px;
+  align-items: center;
+  flex-direction: column;
+}
+
+#portfolio h1 {
+  color: var(--font);
+}
+
+.portfolio-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  gap: 50px;
+}
+
+.portfolio-card {
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.portfolio-card h1 {
+  font-size: 25px;
+}
+
+.portfolio-card p {
+  font-size: 20px;
+  color: var(--font);
+}
+.portfolio-card h6 {
+  font-size: 20px;
+}
+
+.portfolio-card button {
+  height: 30px;
+  border: none;
+  width: 100px;
+  border-radius: 10px;
+  background-color: var(--accent2);
+}
+
+.portfolio-card a {
+  width: 100px;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 250px;
+}
+/* Smartphones */
+@media (max-width: 600px) {
+  #home {
+    height: auto;
+    width: 100%;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .card1 {
+    height: auto;
+    width: 100%;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .card2 {
+    height: auto;
+    width: 100%;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .Logo {
+    display: flex;
+    padding-left: 10px;
+  }
 
-.read-the-docs {
-  color: #888;
+  .Logo img {
+    height: 150px;
+  }
+
+  .Logo h1 {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-family: var(--font-heading);
+    color: var(--heading);
+  }
+
+  .info {
+    width: 100%;
+    height: 400px;
+    align-items: center;
+    padding-left: 23px;
+    gap: 20px;
+    padding-bottom: 0px;
+  }
+
+  .H-heading {
+    width: 90%;
+    padding-left: 10px;
+    font-size: 20px;
+  }
+
+  .info p {
+    font-size: 15px;
+    text-align: center;
+    padding-right: 20px;
+  }
+
+  .card2 {
+    display: none;
+  }
+
+  .whatsapp-icon {
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .scroll-arrow {
+    display: none;
+  }
+
+  #about {
+    width: 100%;
+    height: auto;
+    gap: 30px;
+    padding: 50px 20px;
+  }
+
+  #about div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  #about h4 {
+    font-size: 15px;
+  }
+
+  #about p {
+    font-size: 15px;
+    color: var(--heading);
+    padding: 0px 60px;
+    text-align: left;
+  }
+
+  #services {
+    width: 100%;
+    height: auto;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .service-heading {
+    font-size: 25px;
+    padding-top: 20px;
+  }
+
+  .services-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  /* Slider viewport */
+  .services-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden; /* IMPORTANT */
+    scroll-snap-type: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%; /* controls how much side cards show */
+    padding: 0 0px; /* 👈 THIS creates the quarter peek */
+  }
+
+  /* Cards */
+  .service-card {
+    min-width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 50px;
+    font-size: 18px;
+    z-index: -1;
+  }
+
+  .service-card h1 {
+    font-family: var(--font-heading);
+    margin-bottom: 18px;
+    color: var(--accent);
+  }
+
+  .service-card h4 {
+    font-family: var(--font-family);
+    margin-bottom: 20px;
+    color: var(--font);
+    font-weight: 300;
+    font-size: 18px;
+  }
+  .service-card p {
+    font-family: var(--font-family);
+    margin-bottom: 20px;
+    color: var(--font);
+    font-size: 15px;
+  }
+
+  .service-h {
+    font-family: var(--font-heading);
+    color: var(--heading);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  #whatwedo {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .div1 {
+    height: auto;
+    width: 100%;
+    background-color: var(--background1);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px 50px;
+  }
+
+  .div1 h1 {
+    font-size: 20px;
+  }
+
+  .div1 p {
+    color: var(--font);
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .div2 {
+    height: auto;
+    width: 100%;
+    background-color: var(--background2);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 10px 50px;
+  }
+
+  .div2 h1 {
+    font-size: 25px;
+  }
+
+  .div2 p {
+    font-size: 18px;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .div2 h6 {
+    color: var(--heading);
+    font-size: 18px;
+    padding-bottom: 50px;
+  }
+
+  #howitworks {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+  }
+
+  #howitworks div {
+    height: auto;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  #howitworks div h1 {
+    margin-bottom: 20px;
+  }
+
+  #howitworks div p {
+    font-size: 18px;
+  }
+
+  #calltoaction {
+    height: 55vh;
+    width: 100%;
+    background-color: var(--background2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #calltoaction div {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  #calltoaction div h1 {
+    font-size: 25px;
+  }
+
+  #calltoaction div p {
+    font-size: 18px;
+  }
+
+  .CTAcontact {
+    padding-bottom: 30px;
+  }
+
+  .ACTAcontact {
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 40px;
+  }
+
+  .icons1 {
+    color: #25d366;
+  }
+
+  .icons2 {
+    color: #f503a9;
+  }
+
+  .icons3 {
+    color: #0b0b0b;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .links a {
+    text-decoration: none;
+    color: var(--heading);
+  }
+
+  footer {
+    height: 15vh;
+    background-color: var(--background1);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #portfolio {
+    background-color: var(--background1);
+    height: auto;
+    width: 100%;
+    display: flex;
+    padding: 50px 0px 100px 0px;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #portfolio h1 {
+    color: var(--font);
+  }
+
+  .portfolio-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: start;
+    padding-top: 0%;
+    gap: 50px;
+    flex-direction: column;
+  }
+
+  .portfolio-card {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+  }
+
+  .portfolio-card h1 {
+    font-size: 25px;
+  }
+
+  .portfolio-card p {
+    font-size: 20px;
+    color: var(--font);
+  }
+  .portfolio-card h6 {
+    font-size: 20px;
+  }
+
+  .portfolio-card button {
+    height: 30px;
+    border: none;
+    width: 100px;
+    border-radius: 10px;
+    background-color: var(--accent2);
+  }
+
+  .portfolio-card a {
+    width: 100px;
+  }
+
+  .portfolio-card img {
+    width: 100%;
+    height: 250px;
+  }
+
+  footer p {
+    color: var(--accent);
+  }
 }
